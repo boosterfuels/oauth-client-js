@@ -39,7 +39,8 @@ app.get('/callback', async (req, res) => {
   try {
     const result = await oauth2.authorizationCode.getToken(options)
 
-    token = oauth2.accessToken.create(result)
+    // save this token to DB
+    // const token = oauth2.accessToken.create(result)
 
     res.status(200).json(result)
   } catch (error) {
